@@ -7,6 +7,9 @@ class HelloWorld {
     public static void main(String[] args)
     {
         System.out.println("Hello, World");
-        System.out.println("Hello, World"); System.out.println("Hello, World"); System.out.println("Hello, World"); System.out.println("Hello, World");
+        System.out.println("Hello, World"); 
+        System.out.println("Amar Jeet"); 
+        System.out.println("Amar"); 
+        System.out.println("Jeet");
     }
 }
