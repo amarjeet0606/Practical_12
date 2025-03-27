@@ -1,0 +1,195 @@
+Approach 4 :- Install Jenkins On Ubuntu 
+   (this is production / real time approach)
+
+This installation is specific to systems operating on Ubuntu.   
+
+Follow the below steps:  https://www.jenkins.io/doc/book/installing/linux/ 
+
+
+Step 1: Install Java 
+java -version
+sudo apt update              
+java -version
+sudo apt install openjdk-17-jre-headless
+
+
+root@sridevi:~# java -version
+openjdk version "17.0.14" 2025-01-21
+
+----Done ---
+
+Step 2: Add Jenkins Repository i.e key
+
+
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+  
+  
+Step 3: Add Jenkins repo to the system i.e source list
+
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+  
+Step 4: Install Jenkins
+
+
+sudo apt update
+sudo apt install jenkins
+
+
+Step 5: Verify installation
+systemctl status jenkins
+
+Step 6: Once Jenkins is up and running, access it from the
+link: http://localhost:8080    or the IP of virtual machine like xx.xx.xx.xx:8080
+
+Get the initial admin pwd from command  
+
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+Start, Stop & Restart Jenkins
+$ sudo service jenkins restart
+$ sudo service jenkins stop
+$ sudo service jenkins start
+
+
+-------------------
+
+Jenkins Plugins
+
+
+Ionicons API
+Folders
+OWASP Markup Formatter
+ASM API
+JSON Path API
+Structs
+Pipeline: Step API
+Token Macro
+Build Timeout
+bouncycastle API
+Credentials
+Plain Credentials
+Variant
+SSH Credentials
+Credentials Binding
+SCM API
+Pipeline: API
+commons-lang3 v3.x Jenkins API
+Timestamper
+Caffeine API
+Script Security
+JavaBeans Activation Framework (JAF) API
+JAXB
+SnakeYAML API
+JSON Api
+Jackson 2 API
+commons-text API
+Pipeline: Supporting APIs
+Plugin Utilities API
+Font Awesome API
+Bootstrap 5 API
+JQuery3 API
+ECharts API
+Display URL API
+Checks API
+JUnit
+Matrix Project
+Resource Disposer
+Workspace Cleanup
+Ant
+OkHttp
+Durable Task
+Pipeline: Nodes and Processes
+Pipeline: SCM Step
+Pipeline: Groovy
+Pipeline: Job
+Jakarta Activation API
+Jakarta Mail API
+Apache HttpComponents Client 4.x API
+Instance Identity
+Mailer
+Pipeline: Basic Steps
+Gradle
+Pipeline: Milestone Step
+Pipeline: Build Step
+Pipeline: Groovy Libraries
+Pipeline: Stage Step
+Joda Time API
+Pipeline: Model API
+Pipeline: Declarative Extension Points API
+Branch API
+Pipeline: Multibranch
+Pipeline: Stage Tags Metadata
+Pipeline: Input Step
+Pipeline: Declarative
+Pipeline
+Java JSON Web Token (JJWT)
+GitHub API
+Mina SSHD API :: Common
+Mina SSHD API :: Core
+Gson API
+Git client
+Git
+GitHub
+GitHub Branch Source
+Pipeline: GitHub Groovy Libraries
+Pipeline Graph Analysis
+Metrics
+Pipeline Graph View
+Git
+EDDSA API
+Trilead API
+SSH Build Agents
+Matrix Authorization Strategy
+PAM Authentication
+LDAP
+Email Extension
+Mailer
+Theme Manager
+Dark Theme
+** - required dependency
+
+
+Creta New item -> Name of Project -> Freestyle project-> 
+
+Configue -> Git -> Repository URL (https://github.com/DevSecOpsG/helloworldsimplejavaprogram)  --> Build Steps (Automate your build process with ordered tasks like code compilation, testing, and deployment.
+Execute shell
+?)-> Execute shell->Command
+See the list of available environment variables
+javac helloworld.java
+java Simple
+-> Save -> Build Now
+
+Result 
+
+Console Output
+
+
+Started by user admin
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/myfirstjob
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/myfirstjob/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/DevSecOpsG/helloworldsimplejavaprogram # timeout=10
+Fetching upstream changes from https://github.com/DevSecOpsG/helloworldsimplejavaprogram
+ > git --version # timeout=10
+ > git --version # 'git version 2.25.1'
+ > git fetch --tags --force --progress -- https://github.com/DevSecOpsG/helloworldsimplejavaprogram +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 618ec2b6fd428ec35d7ed46c2b6e01839d47553f (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 618ec2b6fd428ec35d7ed46c2b6e01839d47553f # timeout=10
+Commit message: "Update helloworld.java"
+ > git rev-list --no-walk 618ec2b6fd428ec35d7ed46c2b6e01839d47553f # timeout=10
+[myfirstjob] $ /bin/sh -xe /tmp/jenkins64114578008749706.sh
++ javac helloworld.java
++ java Simple
+Hello batch38 team with Praveen, Mustafa
+Hello Batch batch38 WITH FOR STUDENTS RUNNING in front of me and Suresh, Prashant in making CI automated vikas teach devops CI proecss
+Finished: SUCCESS

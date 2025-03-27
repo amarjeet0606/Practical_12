@@ -1,0 +1,20 @@
+Linux Administrator
+1. introduction
+2. What are run level and what are those
+3. Suppose the disk is not visible what would you do and can you give the Full command
+4. Did u ever try this command
+5. Did u patch the server.. support if u patch the server and u get RPM database how do you manage
+6. How do u reset the rout password
+7. How do u configure the repository
+8. How do you disable the repo
+9. What is the fancing in cluster
+1. Permission and users
+2. LVM and how to extend the LVM
+3. What is the difference between yum and rpm
+4. What is the difference between samba and nga
+5. Nfs
+6. Port number ssh, SFTP, ftp
+7. Clustering
+8. Bonding
+9. Fencing
+10. How to add r resources in the cluster
